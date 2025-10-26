@@ -60,9 +60,19 @@ The application includes a utility to perform a clean reset:
 #### Overview
 This application runs directly on your computer, so you need to run the launcher file every time you want to use the Email Builder. Running this file does two things:
 
-It automatically checks GitLab to ensure you have the latest version of the code.
+1. It automatically checks GitLab to ensure you have the latest version of the code.
 
-It opens the Email Builder's interface in your default web browser.
+2. It opens the Email Builder's interface in your default web browser.
+
+---
+### Windows (Recommended Method)
+1. Navigate to the main folder where you saved the Email Builder project.
+
+2. Locate the file named LaunchBuilder.bat.
+
+3. Double-click the LaunchBuilder.bat file.
+
+A small black window (Command Prompt) will briefly appear, showing messages like "Checking for updates..." and "Update complete!". The Email Builder interface will then open automatically in your web browser.
 
 ### 2. Initial Setup
 
