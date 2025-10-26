@@ -1,26 +1,19 @@
-/* Base Toolbar Container */
 #formatting-toolbar {
-    /* ⭐ CHANGE 1: Absolute Positioning for Floating ⭐ */
     position: absolute; 
-    z-index: 1000; /* Ensure it floats above all other form elements */
-    /* Replaces inline styles for container */
-    /* ... (rest of the display, padding, background, border styles remain) ... */
-    
+    z-index: 1000;
     padding: 8px 10px; 
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-bottom: none;
     border-radius: 6px 6px 0 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15);
     
-    /* Layout */
+    
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    
-    /* ⭐ CHANGE 2: Set default to hidden and make it block in JS ⭐ */
-    visibility: hidden; /* Use visibility instead of display: none for smoother transitions */
+    visibility: hidden; 
     opacity: 0;
     transition: opacity 0.2s, visibility 0.2s;
 }
@@ -67,30 +60,27 @@ body.dark #email-preview-container {
     box-shadow: none;
 }
 
-/* General Button Styling (B, I, U, Link) */
 .toolbar-button {
     padding: 6px 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #e9ecef; /* Slightly darker than toolbar background */
+    background-color: #e9ecef;
     color: #495057;
     transition: background-color 0.15s, color 0.15s, box-shadow 0.15s;
-    line-height: 1; /* Keep button height consistent */
+    line-height: 1;
 }
 
 .toolbar-button:hover {
     background-color: #dee2e6;
 }
 
-/* Active State for Toggled Commands (Bold, Italic, Underline) */
 .toolbar-button.active {
-    background-color: var(--clr-primary-a0); /* Use brand color for active state */
+    background-color: var(--clr-primary-a0);
     color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Select and Color Input Styling */
 .toolbar-select {
     padding: 5px 8px;
     border: 1px solid #ced4da;
@@ -101,14 +91,13 @@ body.dark #email-preview-container {
 }
 
 .toolbar-color-input {
-    /* Style the input color container */
     padding: 0;
     border: 1px solid #ced4da;
     border-radius: 4px;
     height: 30px;
     width: 30px;
     cursor: pointer;
-    /* Hide default color well border for a cleaner look */
+    
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -122,14 +111,14 @@ body.dark #email-preview-container {
 }
 
 
-/* Separator Line */
+
 .toolbar-separator {
     border-left: 1px solid #adb5bd;
     height: 20px;
     margin: 0 5px;
 }
 
-/* Current Field Label */
+
 .toolbar-label {
     margin-left: 10px;
     font-size: 13px;
@@ -143,8 +132,8 @@ body.dark #email-preview-container {
     padding: 8px;
     font-size: 14px;
     font-family: inherit;
-    resize: vertical; /* Allow vertical resizing */
-    box-sizing: border-box; /* Include padding and border in width */
+    resize: vertical; 
+    box-sizing: border-box; 
     cursor: text;
     background-color: #f9fafb;
     color: var(--clr-surface-a10);

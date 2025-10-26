@@ -1,10 +1,10 @@
-/* General Reset and Base Styles */
+
 :root {
-/** Base colors */
+
 --clr-dark-a0: #000000;
 --clr-light-a0: #ffffff;
 
-/** Theme primary colors */
+
 --clr-primary-a0: #5a287d;
 --clr-primary-a10: #6d3f8b;
 --clr-primary-a20: #7f5599;
@@ -16,7 +16,7 @@
 --clr-primary-a80: #ece5f0;
 --clr-primary-a90: #ffffff;
 
-/** Theme surface colors */
+
 --clr-surface-a0: #212121;
 --clr-surface-a10: #363636;
 --clr-surface-a20: #4c4c4c;
@@ -26,7 +26,7 @@
 --clr-surface-a60: #aeaeae;
 --clr-surface-a70: #c8c8c8;
 
-/** Theme tonal surface colors */
+
 --clr-surface-tonal-a0: #272229;
 --clr-surface-tonal-a10: #3b373d;
 --clr-surface-tonal-a20: #514c53;
@@ -36,27 +36,27 @@
 --clr-surface-tonal-a60: #b0aeb1;
 --clr-surface-tonal-a70: #cac8ca;
 
-/** Success colors */
+
 --clr-success-a0: #22946e;
 --clr-success-a10: #47d5a6;
 --clr-success-a20: #9ae8ce;
 
-/** Warning colors */
+
 --clr-warning-a0: #ff8200;
 --clr-warning-a10: #d7ac61;
 --clr-warning-a20: #ecd7b2;
 
-/** Danger colors */
+
 --clr-danger-a0: #9c2121;
 --clr-danger-a10: #d94a4a;
 --clr-danger-a20: #eb9e9e;
 
-/** Info colors */
+
 --clr-info-a0: #21498a;
 --clr-info-a10: #4077d1;
 --clr-info-a20: #92b2e5;
 
-/** Examples */
+
 .bg-primary {
  color: var(--clr-primary-a50);
  background-color: var(--clr-surface-a0);
@@ -73,7 +73,7 @@ body {
             min-height: 100vh;
         }
 
-        /* Main Layout */
+        
         #app {
             display: flex;
             width: 100%;
@@ -81,7 +81,7 @@ body {
 
 
 
-        /* Template Library */
+        
         #template-library {
             padding: 0 20px;
         }
@@ -105,7 +105,7 @@ body {
   cursor: pointer;
 }
 
-/* === Header === */
+
 .template-card-header {
   font-size: 16px;
   display: flex;
@@ -151,7 +151,7 @@ body.dark .template-preview{
   object-fit: cover;
   pointer-events: none;
 
-  /* Centering tweak */
+  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -159,7 +159,7 @@ body.dark .template-preview{
 }
 
 
-/* === Details Section === */
+
 .template-details {
   padding: 15px;
   font-size: 14px;
@@ -175,7 +175,7 @@ body.dark .template-preview{
   color: var(--clr-primary-a0);
 }
 
-/* === Button === */
+
 .template-card button {
   padding: 8px 12px;
   background-color: var(--clr-primary-a0);
@@ -194,7 +194,7 @@ body.dark .template-preview{
   transform: scale(1.03);
 }
 
-/* === Dark Mode === */
+
 body.dark .template-card {
   background-color: var(--clr-surface-a0);
   border-color: var(--clr-primary-a20);
@@ -229,7 +229,7 @@ body.dark .template-card:hover {
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
 }
 
-        /* Main Content Area */
+        
         #main-content {
             flex-grow: 1;
             display: flex;
@@ -241,7 +241,7 @@ body.dark .template-card:hover {
             background-color: var(--clr-surface-a0);
         }
 
-        /* Workspace (Form and Preview) */
+        
         #workspace {
             flex-grow: 1;
             display: flex;
@@ -279,7 +279,7 @@ body.dark .template-card:hover {
             resize: vertical;
         }
 
-        /* Right Panel - Preview */
+        
         #preview-panel {
             width: 60%;
             padding: 20px;
@@ -319,7 +319,7 @@ body.dark .template-card:hover {
             border-radius: 15px;
             box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;        }
 
-        /* Utility Pages (Settings) */
+        
         .utility-page {
             padding: 20px;
             overflow-y: auto;
@@ -346,7 +346,7 @@ body.dark .template-card:hover {
             background-color: #1e7e34;
         }
 
-        /* Hidden Utility Page */
+        
         .hidden-page {
             display: none;
         }
@@ -372,7 +372,7 @@ body.dark .template-card:hover {
   border-color: var(--clr-primary-a50);
 }
 
-/* Header (Name + Star) */
+
 .sidebar-card h4 {
   display: flex;
   justify-content: space-between;
@@ -393,7 +393,7 @@ body.dark .template-card:hover {
   transform: scale(1.2);
 }
 
-/* Description */
+
 .preview-content {
   font-size: 13px;
   line-height: 1.4;
@@ -401,11 +401,11 @@ body.dark .template-card:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* show up to 3 lines */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
 }
 
-/* === Dark Mode === */
+
 body.dark .sidebar-card {
   background-color: var(--clr-surface-a0);
   border-color: var(--clr-primary-a30);

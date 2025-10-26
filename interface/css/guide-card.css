@@ -1,16 +1,16 @@
-/* Main Card */
+
                     .guide-card {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        /* Removed height: 100% to allow dynamic vertical scaling based on content */
+                        
                         padding: 2.5rem; 
                         text-align: center;
                         min-height: 500px; 
                         width: 90%;
                     }
-                    /* Titles & Text */
+                    
                     .guide-title {
                         font-size: 2.25rem; 
                         font-weight: 800; 
@@ -23,7 +23,7 @@
                         margin-bottom: 2rem; 
                         max-width: 42rem; 
                     }
-                    /* Grid Container */
+                    
                     .guide-grid {
                         display: grid;
                         grid-template-columns: 1fr; 
@@ -33,13 +33,13 @@
                         max-width: 64rem; 
                         margin-top: 1.5rem; 
                     }
-                    /* Responsive Grid for md:grid-cols-3 */
+                    
                     @media (min-width: 768px) {
                         .guide-grid {
                             grid-template-columns: repeat(1, 1fr);
                         }
                     }
-                    /* Grid Item (Step) */
+                    
                     .guide-step {
                         padding: 1rem; 
                         background-color: #EBDFFA; 
@@ -67,7 +67,7 @@
                     .step-content {
                         color: var(--clr-surface-a20); 
                     }
-                    /* Button */
+                    
                     .guide-button {
                         margin-top: 2.5rem; 
                         padding: 0.75rem 2rem; 

@@ -3,35 +3,35 @@
        these styles control the internal look and feel. */
     width: 250px;
     padding-top: 0.5rem;
-    /* Padding adjustment */
-    /* Increased padding-bottom to make room for the absolutely positioned .version footer */
+    
+    
     padding-bottom: 3.5rem;
     background-color: #ffffff;
-    /* Light Mode: White */
+    
     border-right: 1px solid #e5e7eb;
-    /* Subtle separator */
+    
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    /* Soft shadow */
+    
     transition: background-color 0.3s, border-color 0.3s;
     position: relative;
-    /* CRITICAL: Allows the .version element to be pinned using absolute positioning */
+    
 }
 
-/* Dark Mode Container Adjustment */
+
 body.dark #sidebar {
     background-color: var(--clr-surface-a10);
-    /* Dark Mode: Gray-800 */
+    
     border-right: 1px solid var(--clr-surface-a20);
 }
 
-/* 2. Section Headings (App Menu, Templates) */
+
 #sidebar h3 {
     font-size: 1.125rem;
-    /* Text large */
+    
     font-weight: 600;
-    /* Semi-bold */
+    
     color: var(--clr-primary-a0);
-    /* Primary color (Indigo-600) for emphasis */
+    
     padding: 0 1.25rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
@@ -40,19 +40,19 @@ body.dark #sidebar {
 body.dark #sidebar h3 {
     color: var(--clr-primary-a50);
 }
-/* 3. Navigation List */
+
 #nav-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* 4. Navigation Buttons (Common Styles) */
+
 #nav-menu li button {
     display: flex;
-    /* CRITICAL: Enables horizontal layout for icon + text */
+    
     align-items: center;
-    /* Vertically center icon and text */
+    
     width: 100%;
     text-align: left;
     padding: 0.75rem 1.25rem;
@@ -63,36 +63,36 @@ body.dark #sidebar h3 {
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;
     border-radius: 100px;
-    /* Slight rounding on buttons */
+    
 }
 
-/* Light Mode Button Colors */
+
 #nav-menu li button {
     color: var(--clr-surface-a20);
-    /* Gray-700 */
+    
 }
 
 #nav-menu li button:hover {
     background-color: var(--clr-primary-a70);
-    /* Indigo-100 hover */
+    
     color: var(--clr-primary-a0);
-    /* Indigo-600 hover text */
+    
 }
 
-/* Dark Mode Button Colors */
+
 body.dark #nav-menu li button {
     color: #d1d5db;
-    /* Gray-300 */
+    
 }
 
 body.dark #nav-menu li button:hover {
     background-color: var(--clr-surface-a20);
-    /* Gray-700 hover */
+    
     color: var(--clr-primary-a50);
-    /* Indigo-300 hover text */
+    
 }
 
-/* You will need to add a class="active" to the currently selected button */
+
 #nav-menu li button.active-nav {
     background-color: var(--clr-primary-a0);
     color: #ffffff;
@@ -102,10 +102,10 @@ body.dark #nav-menu li button:hover {
 
 body.dark #nav-menu li button.active-nav {
     background-color: var(--clr-primary-a0);
-    /* Darker Indigo active */
+    
 }
 
-/* 5. Separator for Template Library */
+
 #template-library-sidebar h3 {
     border-top: 1px solid #e5e7eb;
     padding-top: 1rem;
@@ -116,7 +116,7 @@ body.dark #template-library-sidebar h3 {
     border-top: 1px solid var(--clr-surface-a20);
 }
 
-/* 6. Version Footer */
+
 .version {
     position: absolute;
     bottom: 0;
@@ -135,14 +135,14 @@ body.dark #template-library-sidebar h3 {
 
 body.dark .version {
     color: #9ca3af;
-    /* Gray-400 */
+    
     border-top: 1px solid var(--clr-surface-a20);
     background-color: var(--clr-surface-a10);
-    /* Dark Mode: Gray-800 */
+    
 }
 
 
-/* Sidebar for Navigation and Templates */
+
 #sidebar {
     width: 250px;
     background-color: #fff;

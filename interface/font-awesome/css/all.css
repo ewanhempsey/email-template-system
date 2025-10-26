@@ -14950,7 +14950,7 @@ readers do not read off random characters that represent icons */
 .fa-duotone.fa-stack-1x, .fa-duotone.fa-stack-2x {
   position: absolute; }
 
-/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons */
+
 
 .fad.fa-0::after, .fa-duotone.fa-0::after {
   content: "\30\30"; }

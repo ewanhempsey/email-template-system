@@ -1,6 +1,6 @@
 function formatText(command) {
     document.execCommand(command, false, null);
-    updatePreview(); // Update preview after formatting
+    updatePreview();
     updateToolbarState();
 }
 
@@ -29,7 +29,6 @@ function showToolbar() {
     if (focusedElement && focusedElement.contentEditable === 'true') {
         currentEditingElement = focusedElement; 
         
-        // --- Calculate and Position Toolbar (Existing Logic) ---
         const formPanel = document.getElementById('form-panel');
         const formPanelRect = formPanel.getBoundingClientRect();
         const elementRect = focusedElement.getBoundingClientRect();

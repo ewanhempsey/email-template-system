@@ -2,10 +2,10 @@
     flex-grow: 1;
     padding: 2rem;
     overflow-y: auto;
-    /* Allows content within the main view to scroll */
+    
 }
 
-/* Settings Page Specific Styles (NEW MODERN STYLING) */
+
 
 #settings-page {
     max-width: 800px;
@@ -42,13 +42,13 @@ body.dark #settings-page h3 {
     gap: 2rem;
 }
 
-/* Responsive grid for larger screens */
+
 @media (min-width: 640px) {
     #settings-form {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Make signature/theme controls span full width */
+    
     #settings-form .input-group:nth-of-type(4),
     #settings-form .input-group:nth-of-type(5),
     #settings-form .input-group:nth-of-type(6) {
@@ -70,7 +70,7 @@ body.dark .input-group label {
     color: #d1d5db;
 }
 
-/* Styling for all common input types (text, url) and textarea */
+
 .input-group input[type="text"],
 .input-group input[type="url"],
 .input-group textarea {
@@ -95,7 +95,7 @@ body.dark .input-group label {
     box-shadow: 0 0 0 3px rgba(90, 40, 125, 0.2);
 }
 
-/* Dark Mode Input Styles */
+
 body.dark .input-group input[type="text"],
 body.dark .input-group input[type="url"],
 body.dark .input-group textarea {
@@ -110,7 +110,7 @@ body.dark .input-group textarea:focus {
     box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.2);
 }
 
-/* Color Input Specific Styling */
+
 .input-group input[type="color"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -118,13 +118,13 @@ body.dark .input-group textarea:focus {
     border: 1px solid #d1d5db;
     width: 100%;
     height: 48px;
-    /* Standardize height with text inputs */
+    
     padding: 0.25rem;
     border-radius: 0.5rem;
     cursor: pointer;
 }
 
-/* Radio Group for Theme Toggle (Pill Selector Style) */
+
 .radio-group {
     display: flex;
     background-color: #e5e7eb;
@@ -138,7 +138,7 @@ body.dark .radio-group {
 
 .radio-group input[type="radio"] {
     display: none;
-    /* Hide native radio button */
+    
 }
 
 .radio-group label {
@@ -156,7 +156,7 @@ body.dark .radio-group label {
     color: #d1d5db;
 }
 
-/* Style when radio button is CHECKED */
+
 .radio-group input[type="radio"]:checked+label {
     background-color: #ffffff;
     color: var(--clr-primary-a0);
@@ -169,10 +169,10 @@ body.dark .radio-group input[type="radio"]:checked+label {
     color: var(--clr-primary-a50);
 }
 
-/* Save Button Styling */
+
 #settings-form button[type="button"] {
     grid-column: span 1 / span 1;
-    /* Default span 1 */
+    
     padding: 0.85rem 1.5rem;
     background-color: var(--clr-primary-a0);
     color: white;
@@ -189,7 +189,7 @@ body.dark .radio-group input[type="radio"]:checked+label {
 @media (min-width: 640px) {
     #settings-form button[type="button"] {
         grid-column: span 2 / span 2;
-        /* Span full width on desktop */
+        
     }
 }
 
@@ -208,7 +208,7 @@ body.dark #settings-form button[type="button"]:hover {
     color: var(--clr-surface-a70);
 }
 
-/* Footer Text */
+
 #settings-page p {
     font-size: 0.9rem;
     color: #6b7280;
@@ -221,11 +221,11 @@ body.dark #settings-page p {
 }
 
 
-/* Template Editor (Main Content) */
+
 #template-editor {
     flex-grow: 1;
     padding: 1rem;
-    /* Ensures editor content itself can scroll if necessary */
+    
     overflow-y: auto;
     border-radius: 0.75rem;
     background-color: #f9fafb;
@@ -237,7 +237,7 @@ body.dark #template-editor {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Utility Classes */
+
 .hidden-page {
     display: none;
 }
@@ -279,11 +279,11 @@ body.dark #setting-brandcolor {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  pointer-events: none; /* don’t block clicks */
+  pointer-events: none; 
   width: 50%;
 }
 
-/* === Notification Base === */
+
 .notification {
   width: 100%;
   padding: 12px 20px;
@@ -298,7 +298,7 @@ body.dark #setting-brandcolor {
   pointer-events: auto;
 }
 
-/* === Notification Types === */
+
 .notification.info {
   background-color: var(--clr-info-a0);
 }
@@ -315,7 +315,7 @@ body.dark #setting-brandcolor {
   background-color: var(--clr-danger-a0);
 }
 
-/* === Animations === */
+
 @keyframes slideDownFade {
   0% {
     opacity: 0;
@@ -338,7 +338,7 @@ body.dark #setting-brandcolor {
   }
 }
 
-/* === Dark Mode === */
+
 body.dark .notification {
   color: var(--clr-primary-a90);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
