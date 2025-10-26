@@ -22,7 +22,7 @@ The builder provides several mechanisms to create branded, ready-to-use email co
 
 * **Global Settings:** Users define five essential global variables:
     * **Full Name / Team Name:** Used in the signature block.
-    * **Brand Color (Hex):** Dynamically sets primary call-to-action (CTA) button colors and visual accents across all templates.
+    * **Brand Colour (Hex):** Dynamically sets primary call-to-action (CTA) button colors and visual accents across all templates.
     * **Signature Line:** A configurable closing phrase (e.g., "Best regards,").
     * **Support URL:** A key link for customer-facing emails.
 * **Theme Toggle:** A dedicated setting allows instant switching between **Light Mode** and **Dark Mode** for the application interface to ensure comfortable use in any environment.
@@ -56,21 +56,28 @@ The application includes a utility to perform a clean reset:
 ---
 
 ## Detailed Usage Guide
+### 1. Launcher
+#### Overview
+This application runs directly on your computer, so you need to run the launcher file every time you want to use the Email Builder. Running this file does two things:
 
-### 1. Launch and Initial Setup
+It automatically checks GitLab to ensure you have the latest version of the code.
+
+It opens the Email Builder's interface in your default web browser.
+
+### 2. Initial Setup
 
 After opening `index.html`, immediately navigate to the **Settings** page.
 
 | Setting Field | Purpose | Placeholders Affected |
 | :--- | :--- | :--- |
 | Your Full Name | Personal signature | `[Your Full Name]` |
-| Brand Color | Primary color for CTAs | `[Brand Color]` |
+| Brand Colour | Primary colour for CTAs | `[Brand Color]` |
 | Signature Line | Closing text (e.g., "Sincerely") | `[Signature Line]` |
 | Support Page URL | Link for users to get help | `[Support Page URL]` |
 | Application Theme | Light/Dark mode for the builder UI | N/A |
 
 Click **Save Settings** to apply changes and store them locally.
 
-### 2. Template Selection and Preview
+### 3. Template Selection and Preview
 
 Select a template from the **Template Library** sidebar. The main editor panel will load the template, execute the placeholder replacement logic, and display the final, branded HTML output. This output is ready to be copied directly into your target email service.
