@@ -1,6 +1,6 @@
 # Email Template Builder
 
-This application is a specialized tool designed for the rapid generation of customizable HTML-based email content. Its primary goal is to provide a fast, private, and portable solution for marketing and support teams who require consistent, branded email communication without relying on complex external services or server-side databases.
+This application is a specialised tool designed for the rapid generation of customisable HTML-based email content. Its primary goal is to provide a fast, private, and portable solution for marketing and support teams who require consistent, branded email communication without relying on complex external services or server-side databases.
 
 ---
 
@@ -18,7 +18,7 @@ The core philosophy of this builder is **simplicity and local data management**.
 
 The builder provides several mechanisms to create branded, ready-to-use email content:
 
-### Customization and Theming
+### Customisation and Theming
 
 * **Global Settings:** Users define five essential global variables:
     * **Full Name / Team Name:** Used in the signature block.
@@ -30,8 +30,8 @@ The builder provides several mechanisms to create branded, ready-to-use email co
 ### Template Management
 
 * **Dynamic Placeholders:** Template content is plain HTML embedded with placeholders (e.g., `[Brand Color]`, `[Your Full Name]`). The JavaScript engine automatically replaces these tokens with your saved settings on every preview update.
-* **Template Library:** The sidebar provides a quick, centralized view of all available templates.
-* **Favourite Templates:** Templates can be marked as favourites using the star icon, which saves their preferred status locally and prioritizes them visually.
+* **Template Library:** The sidebar provides a quick, centralised view of all available templates.
+* **Favourite Templates:** Templates can be marked as favourites using the star icon, which saves their preferred status locally and prioritises them visually.
 
 ---
 

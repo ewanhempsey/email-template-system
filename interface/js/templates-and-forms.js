@@ -9,8 +9,11 @@ function generateForm(templateId) {
         <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('italic')" style="font-style: italic;">I</button>
         <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('underline')" style="text-decoration: underline;">U</button>
         <span class="toolbar-separator"></span>
-        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatLink()">🔗 Link</button>
+        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatLink()"><i class="fas fa-link"></i> Link</button>
+        <button type="button" class="toolbar-button" onclick="formatUnlink()" title="Remove Link"><i class="fas fa-unlink"></i> Unlink</button>
+        <span class="toolbar-separator"></span>
         <span id="current-field-label" class="toolbar-label"></span>
+        <button type="button" class="toolbar-button" onclick="showNotification('error', 'This feature is coming soon', 3000)" title="Add Photo"><i class="fas fa-image"></i> Photo</button>
     </div>
     `;
     const formHeading = document.createElement('h3');
@@ -159,6 +162,7 @@ function populateTemplateLibrary() {
         fullCard.innerHTML = `
             <div class="template-card" onclick="selectTemplate('${id}')">
             <h4 class="template-card-header">
+                <i class="${isCustom(id) ? 'fa-solid fa-pencil-ruler' : 'fa-solid fa-list-dropdown'}"></i>
                 ${template.name}
                 <span 
                 class="favourite-star" 
@@ -215,7 +219,9 @@ function togglefavourite(templateId) {
     
 }
 
-
+function isCustom(templateId) {
+    return TEMPLATES[templateId] && TEMPLATES[templateId].custom || false;
+}
 
 function isfavourite(templateId) {
     return TEMPLATES[templateId] && TEMPLATES[templateId].isfavourite || false;
@@ -227,7 +233,7 @@ function showGuidanceCard() {
         <div class="guide-card">
                     <h2 class="guide-title">Email Builder: Get Started</h2>
                     <p class="guide-subtitle">
-                        This is a simple, browser-based tool designed to help you quickly <strong>customize and preview</strong> standard email communication templates before sending.
+                        This is a simple, browser-based tool designed to help you quickly <strong>customise and preview</strong> standard email communication templates before sending.
                         All custom branding (color, signature, etc.) is managed via your <strong>Settings</strong>.
                     </p>
                     

@@ -1,7 +1,10 @@
 const DEFAULT_SETTINGS = {
-    fullname: '',
+    firstname: '',
+    lastname: '',
     team: '',
+    role: '',
     brandcolor: '#5A287D',
+    linkcolor: '#e51565',
     signature: 'Best regards,',
     supportpage: '',
     favouriteTemplates: [],
@@ -33,9 +36,12 @@ function saveSettings() {
     const form = document.getElementById('settings-form');
     const existingSettings = loadSettings();
 
-    existingSettings.fullname = form['setting-fullname'].value;
+    existingSettings.firstname = form['setting-firstname'].value;
+    existingSettings.lastname = form['setting-lastname'].value;
     existingSettings.team = form['setting-team'].value;
+    existingSettings.role = form['setting-role'].value;
     existingSettings.brandcolor = form['setting-brandcolor'].value;
+    existingSettings.linkcolor = form['setting-linkcolor'].value;
     existingSettings.signature = form['setting-signature'].value;
     existingSettings.supportpage = form['setting-supportpage'].value;
     existingSettings.theme = form.querySelector('input[name="theme"]:checked').value;
@@ -54,11 +60,14 @@ function saveSettings() {
     
 }
 
-function initializeSettingsForm() {
+function initialiseSettingsForm() {
     const settings = loadSettings();
-    document.getElementById('setting-fullname').value = settings.fullname;
+    document.getElementById('setting-firstname').value = settings.firstname;
+    document.getElementById('setting-lastname').value = settings.lastname;
     document.getElementById('setting-team').value = settings.team;
+    document.getElementById('setting-role').value = settings.role;
     document.getElementById('setting-brandcolor').value = settings.brandcolor;
+    document.getElementById('setting-linkcolor').value = settings.linkcolor;
     document.getElementById('setting-signature').value = settings.signature;
     document.getElementById('setting-supportpage').value = settings.supportpage;
 

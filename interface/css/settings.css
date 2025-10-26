@@ -49,9 +49,9 @@ body.dark #settings-page h3 {
     }
 
     
-    #settings-form .input-group:nth-of-type(4),
-    #settings-form .input-group:nth-of-type(5),
-    #settings-form .input-group:nth-of-type(6) {
+    #settings-form .input-group:nth-of-type(7),
+    #settings-form .input-group:nth-of-type(8),
+    #settings-form .input-group:nth-of-type(9) {
         grid-column: span 2 / span 2;
     }
 }
@@ -245,7 +245,7 @@ body.dark #template-editor {
 button.input-group {
     background-color: var(--clr-primary-a0);
 }
-body.dark #setting-brandcolor {
+body.dark #setting-brandcolor, body.dark #setting-linkcolor {
     background-color: var(--clr-surface-a20);
 }
 

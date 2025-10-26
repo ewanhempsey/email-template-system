@@ -101,16 +101,28 @@
                 <h3>Settings</h3>
                 <form id="settings-form">
                     <div class="input-group">
-                        <label for="setting-fullname">Your Full Name:</label>
-                        <input type="text" id="setting-fullname" name="fullname" placeholder="e.g., Jane Doe">
+                        <label for="setting-firstname">Your First Name:</label>
+                        <input type="text" id="setting-firstname" name="firstname" placeholder="e.g., Jane">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-firstname">Your Last Name:</label>
+                        <input type="text" id="setting-lastname" name="lastname" placeholder="e.g., Doe">
                     </div>
                     <div class="input-group">
                         <label for="setting-team">Team Name:</label>
                         <input type="text" id="setting-team" name="team" placeholder="e.g., Marketing">
                     </div>
                     <div class="input-group">
-                        <label for="setting-brandcolor">Brand Color:</label>
+                        <label for="setting-role">Your Role:</label>
+                        <input type="text" id="setting-role" name="role" placeholder="e.g., Marketing Analyst">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-brandcolor">Brand Colour:</label>
                         <input type="color" id="setting-brandcolor" name="brandcolor" value="#007bff">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-linkcolor">Link Colour:</label>
+                        <input type="color" id="setting-linkcolor" name="linkcolor" value="#007bff">
                     </div>
                     <div class="input-group">
                         <label for="setting-signature">Signature Line:</label>
@@ -138,17 +150,18 @@
 
         </div>
     </div>
+    <script src="../../templates/templates.js"></script>
+    <script src="../../templates/custom-templates.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/settings.js"></script>
     <script src="../js/navigation.js"></script>
-    <script src="../js/template-data.js"></script>
     <script src="../js/templates-and-forms.js"></script>
     <script src="../js/formatting.js"></script>
     <script src="../js/help.js"></script>
     <script>
         window.onload = function() {
             let nextElementMargin = 0;
-            initializeSettingsForm();
+            initialiseSettingsForm();
             populateTemplateLibrary();
             selectTemplate(null);
             showPage('settings');
