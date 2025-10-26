@@ -2,7 +2,8 @@ function showPage(pageId) {
     const pages = {
         'builder': document.getElementById('builder-page'),
         'templates': document.getElementById('templates-page'),
-        'settings': document.getElementById('settings-page')
+        'settings': document.getElementById('settings-page'),
+        'help': document.getElementById('help-page')
     };
 
     Object.values(pages).forEach(page => page.classList.add('hidden-page'));

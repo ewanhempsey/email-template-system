@@ -3,23 +3,15 @@ function generateForm(templateId) {
     const formPanel = document.getElementById('form-panel');
     formPanel.innerHTML = `
     <div id="formatting-toolbar">
-
-                            <!-- Text Color Picker -->
-                            <input type="color" id="font-color-picker" class="toolbar-color-input" value="#333333" onmousedown="event.preventDefault();" onchange="formatTextWithValue('foreColor', this.value)">
-                            
-                            <!-- Separator -->
-                            <span class="toolbar-separator"></span>
-
-                            <!-- Formatting Buttons -->
-                            <!-- Note: We keep the inline styles here only for the visual representation of the button's purpose (B, I, U) -->
-                            <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('bold')" style="font-weight: bold;">B</button>
-                            <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('italic')" style="font-style: italic;">I</button>
-                            <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('underline')" style="text-decoration: underline;">U</button>
-                            <span class="toolbar-separator"></span>
-                            <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatLink()">🔗 Link</button>
-                            
-                            <span id="current-field-label" class="toolbar-label"></span>
-                        </div>
+        <input type="color" id="font-color-picker" class="toolbar-color-input" value="#333333" onmousedown="event.preventDefault();" onchange="formatTextWithValue('foreColor', this.value)">
+        <span class="toolbar-separator"></span>
+        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('bold')" style="font-weight: bold;">B</button>
+        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('italic')" style="font-style: italic;">I</button>
+        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatText('underline')" style="text-decoration: underline;">U</button>
+        <span class="toolbar-separator"></span>
+        <button type="button" class="toolbar-button" onmousedown="event.preventDefault();" onclick="formatLink()">🔗 Link</button>
+        <span id="current-field-label" class="toolbar-label"></span>
+    </div>
     `;
     const formHeading = document.createElement('h3');
     formHeading.textContent = template.name;
@@ -226,13 +218,7 @@ function togglefavourite(templateId) {
 
 
 function isfavourite(templateId) {
-    // The || false provides a safe default if the template or the property doesn't exist
     return TEMPLATES[templateId] && TEMPLATES[templateId].isfavourite || false;
-}
-
-function showMessageBox(message, type = 'info') {
-    console.log(`[Message - ${type.toUpperCase()}]: ${message}`);
-    // You can replace this console log with a custom modal UI later
 }
 
 function showGuidanceCard() {
@@ -266,7 +252,7 @@ function showGuidanceCard() {
                         </div>
                     </div>
 
-                    <button onclick="document.getElementById('library-section').scrollIntoView({ behavior: 'smooth' })" 
+                    <button onclick="showPage('templates')" 
                             class="guide-button">
                         Browse Templates Now
                     </button>

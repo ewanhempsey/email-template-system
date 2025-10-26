@@ -1,7 +1,6 @@
 function formatText(command) {
     document.execCommand(command, false, null);
     updatePreview();
-    updateToolbarState();
 }
 
 function formatLink() {
@@ -42,14 +41,10 @@ function showToolbar() {
         toolbar.style.top = `${topPosition}px`;
         toolbar.style.left = `${leftPosition}px`;
         toolbar.style.width = `${currentEditingElement.offsetWidth-22}px`;
-        console.log(currentEditingElement.offsetWidth)
-        // Make it visible
         toolbar.style.visibility = 'visible';
         toolbar.style.opacity = '1';
-        
         reserveMarginSpace(focusedElement, toolbarHeight + offset);
         
-        updateToolbarState();
     }
 }
 
@@ -75,7 +70,7 @@ function reserveMarginSpace(activeElement, spaceNeeded) {
     if (!activeGroup) return;
 
     const nextGroup = activeGroup.nextElementSibling;
-
+    if (typeof nextElementMargin === "undefined") {nextElementMargin = null};
     if (nextGroup && nextGroup.classList.contains('input-group')) {
         if (nextElementMargin === null) {
             nextElementMargin = nextGroup.style.marginTop;
@@ -94,4 +89,9 @@ function clearMarginReservation(lastActiveElement) {
         nextGroup.style.marginTop = nextElementMargin;
         nextElementMargin = null;
     }
+}
+
+function formatTextWithValue(command, value) {
+    document.execCommand(command, false, value);
+    updatePreview();
 }

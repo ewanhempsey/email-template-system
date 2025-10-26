@@ -98,7 +98,6 @@ function ensureNotificationContainer() {
   return container;
 }
 
-// Show a notification
 function showNotification(type, message, duration = 2000) {
   const icons = {
     success: 'fa-circle-check',
@@ -113,7 +112,6 @@ function showNotification(type, message, duration = 2000) {
   note.innerHTML = `<i class="fa-solid ${icons[type]}"></i><span>${message}</span>`;
   container.appendChild(note);
 
-  // Auto-hide after delay
   setTimeout(() => {
     note.style.animation = 'fadeOutUp 0.4s ease forwards';
     setTimeout(() => note.remove(), 400);
