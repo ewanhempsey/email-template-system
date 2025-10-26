@@ -1,0 +1,163 @@
+/* Base Toolbar Container */
+#formatting-toolbar {
+    /* ⭐ CHANGE 1: Absolute Positioning for Floating ⭐ */
+    position: absolute; 
+    z-index: 1000; /* Ensure it floats above all other form elements */
+    /* Replaces inline styles for container */
+    /* ... (rest of the display, padding, background, border styles remain) ... */
+    
+    padding: 8px 10px; 
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    
+    /* Layout */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    
+    /* ⭐ CHANGE 2: Set default to hidden and make it block in JS ⭐ */
+    visibility: hidden; /* Use visibility instead of display: none for smoother transitions */
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+
+#form-panel {
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+body.dark #form-panel {
+    background-color: var(--clr-surface-a10);
+    border-right: 1px solid var(--clr-surface-a30);
+}
+
+body.dark #preview-panel {
+    background-color: var(--clr-surface-a20);
+}
+
+body.dark .guide-title {
+    color: var(--clr-primary-a50);
+}
+
+body.dark h3 {
+    color: var(--clr-primary-a50);
+}
+
+body.dark .guide-subtitle {
+    color: var(--clr-light-a0);
+}
+
+body.dark .step-content {
+    color: var(--clr-dark-a0);
+}
+
+body.dark #email-preview-container {
+    background-color: var(--clr-surface-a0);
+    border-color: var(--clr-surface-a0);
+    box-shadow: none;
+}
+
+/* General Button Styling (B, I, U, Link) */
+.toolbar-button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #e9ecef; /* Slightly darker than toolbar background */
+    color: #495057;
+    transition: background-color 0.15s, color 0.15s, box-shadow 0.15s;
+    line-height: 1; /* Keep button height consistent */
+}
+
+.toolbar-button:hover {
+    background-color: #dee2e6;
+}
+
+/* Active State for Toggled Commands (Bold, Italic, Underline) */
+.toolbar-button.active {
+    background-color: var(--clr-primary-a0); /* Use brand color for active state */
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Select and Color Input Styling */
+.toolbar-select {
+    padding: 5px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toolbar-color-input {
+    /* Style the input color container */
+    padding: 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    /* Hide default color well border for a cleaner look */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.toolbar-color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+.toolbar-color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 3px;
+}
+
+
+/* Separator Line */
+.toolbar-separator {
+    border-left: 1px solid #adb5bd;
+    height: 20px;
+    margin: 0 5px;
+}
+
+/* Current Field Label */
+.toolbar-label {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.editable-textarea-field {
+    min-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical; /* Allow vertical resizing */
+    box-sizing: border-box; /* Include padding and border in width */
+    cursor: text;
+    background-color: #f9fafb;
+    color: var(--clr-surface-a10);
+}
+
+body.dark .editable-textarea-field {
+    background-color: var(--clr-surface-a20);
+    border-color: var(--clr-surface-a60);
+    color: #f3f4f6;
+}
+
+.editable-textarea-field:focus {
+    border-color: var(--clr-primary-a0);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(90, 40, 125, 0.2);
+}

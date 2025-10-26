@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Draft</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/form.css"/>
+    <link rel="stylesheet" href="../css/guide-card.css"/>
+    <link rel="stylesheet" href="../css/navbar.css"/>
+    <link rel="stylesheet" href="../css/settings.css"/>
+    <link href="../font-awesome/css/all.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="app">
+        <div id="sidebar">
+            <h3 style="padding: 0 20px; margin-top: 0;">Quick Draft</h3>
+            <ul id="nav-menu">
+                <li><button onclick="showPage('builder')"><i class="fa-solid fa-envelope"></i>  Build Email</button></li>
+                <li><button onclick="showPage('templates')"><i class="fa-solid fa-books"></i> Template Library</button></li>
+                <li><button onclick="showPage('templates')"><i class="fa-solid fa-circle-question"></i> Help</button></li>
+                <li><button onclick="showPage('settings')"><i class="fa-solid fa-user-cog"></i> Settings</button></li>
+            </ul>
+
+            <div id="template-library-sidebar">
+                <h3 style="padding: 0 20px;">Templates</h3>
+            </div>
+            <div class="version"><i class="fa-solid fa-file-code"></i> v1.0.0</div>
+        </div>
+
+        <div id="main-content">
+            <div id="builder-page" class="workspace-page">
+                <div id="workspace">
+                    
+                    <div id="form-panel">
+                        <h3>Template Fields</h3>
+                        
+                        <form id="template-form">
+                            </form>
+                    </div>
+
+                    <div id="preview-panel">
+                        <div id="preview-header">
+                            <h3>Outlook Preview</h3>
+                            <button id="copy-html-btn" onclick="copyHtmlToClipboard()">Copy Email</button>
+                        </div>
+                        <div id="email-preview-container">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="templates-page" class="utility-page hidden-page">
+                <h3>Template Library</h3>
+                <div id="template-full-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5em;">
+                    </div>
+            </div>
+
+            <div id="settings-page" class="utility-page hidden-page">
+                <h3>Settings</h3>
+                <form id="settings-form">
+                    <div class="input-group">
+                        <label for="setting-fullname">Your Full Name:</label>
+                        <input type="text" id="setting-fullname" name="fullname" placeholder="e.g., Jane Doe">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-team">Team Name:</label>
+                        <input type="text" id="setting-team" name="team" placeholder="e.g., Marketing">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-brandcolor">Brand Color:</label>
+                        <input type="color" id="setting-brandcolor" name="brandcolor" value="#007bff">
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-signature">Signature Line:</label>
+                        <textarea id="setting-signature" name="signature" placeholder="e.g., Best regards,"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="setting-supportpage">Support Page URL:</label>
+                        <input type="text" id="setting-supportpage" name="supportpage" placeholder="e.g., https://mycompany.com/support">
+                    </div>
+                    <div class="input-group">
+                    <label for="theme">Application Theme</label>
+                    <div class="radio-group">
+                        <input type="radio" id="theme-light" name="theme" value="light" checked>
+                        <label style="margin-bottom: 0!important;" for="theme-light">Light Mode</label>
+                        
+                        <input type="radio" id="theme-dark" name="theme" value="dark">
+                        <label style="margin-bottom: 0!important;" for="theme-dark">Dark Mode</label>
+                    </div>
+                </div>
+                    <button type="button" onclick="saveSettings()">Save Settings</button>
+                </form>
+                <p style="margin-top: 20px;">Settings are saved locally in your browser and persist across sessions.</p>
+                <button type="button"class="danger-zone" onclick="clearAllLocalStorage()">Delete Site Data</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/template-data.js"></script>
+    <script src="../js/templates-and-forms.js"></script>
+    <script src="../js/formatting.js"></script>
+    <script>
+        window.onload = function() {
+            let nextElementMargin = 0;
+            initializeSettingsForm();
+            populateTemplateLibrary();
+            selectTemplate(null);
+            showPage('settings');
+        };
+    </script>
+
+</body>
+</html>
