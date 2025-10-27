@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/navbar.css"/>
     <link rel="stylesheet" href="../css/settings.css"/>
     <link rel="stylesheet" href="../css/help.css"/>
+    <link rel="stylesheet" href="../css/template-builder.css"/>
     <link href="../font-awesome/css/all.css" rel="stylesheet" />
 </head>
 <body>
@@ -20,6 +21,7 @@
             <h3 style="padding: 0 20px; margin-top: 0;">Quick Draft</h3>
             <ul id="nav-menu">
                 <li><button onclick="showPage('builder')"><i class="fa-solid fa-envelope"></i>  Build Email</button></li>
+                <li><button onclick="showPage('templatebuilder')"><i class="fa-solid fa-wrench"></i>  Build Template</button></li>
                 <li><button onclick="showPage('templates')"><i class="fa-solid fa-books"></i> Template Library</button></li>
                 <li><button onclick="showPage('help')"><i class="fa-solid fa-circle-question"></i> Help</button></li>
                 <li><button onclick="showPage('settings')"><i class="fa-solid fa-user-cog"></i> Settings</button></li>
@@ -67,18 +69,15 @@
                         </div>
 
                         <nav id="helpCategories" class="help-categories">
-                        <!-- Populated via JS -->
                         </nav>
                     </div>
 
                     <div class="help-content">
                         <h2 id="helpTitle" class="help-title">Help & FAQ</h2>
                         <div id="faqContainer" class="faq-list">
-                        <!-- Populated via JS -->
                         </div>
                     </div>
 
-                    <!-- Template for FAQ item -->
                     <template id="faqTemplate">
                         <div class="faq-item">
                         <button class="faq-q">
@@ -147,17 +146,65 @@
                 <p style="margin-top: 20px;">Settings are saved locally in your browser and persist across sessions.</p>
                 <button type="button"class="danger-zone" onclick="clearAllLocalStorage()">Delete Site Data</button>
             </div>
+            <div id="template-builder-page" class="block">
+                <div class="grid-container">
+                    <div class="left-pane">
+                        <h3 class="text-lg font-semibold mb-3 text-gray-700">Available Blocks</h3>
+                        <div id="prefab-blocks-list" class="block-list-container">
+                        </div>
+                        <div id="custom-block-config" class="hidden">
+                            <h4>Custom Code Configuration</h4>
+                            <label>Custom HTML Snippet (Must be a full &lt;tr&gt;...&lt;/tr&gt; block)</label>
+                            <textarea id="custom-html-input" rows="5"></textarea>
+                            
+                            <label>Field Definitions (JSON Array: [{"id":"myField","label":"Label"}])</label>
+                            
+                            <textarea id="custom-fields-json" rows="5"></textarea>
 
-        </div>
+                            <button onclick="addCustomCodeBlock()" class="btn btn-custom">
+                                Add Custom Block to Template
+                            </button>
+                        </div> 
+                    </div>
+                    <div class="middle-top">
+                        <div id="template-structure-list">
+                        </div>                        
+                    </div>
+                    <div class="middle-bottom">
+                        <div class="frame">
+                            <iframe id="preview-iframe" title="Email Template Live Preview"></iframe>
+                        </div>
+                    </div>
+                    <div class="right-pane">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-700">Generated Template Definition (Copy this)</h3>
+                        
+                        <div class="output-instructions">
+                            <p><strong>Usage Instructions:</strong></p>
+                            <p>Copy the code below and paste it as a new entry into your main JavaScript <strong>templates dictionary</strong> (in the <code>template.js</code> or equivalent file).</p>
+                        </div>
+
+                        <textarea id="template-output" rows="10" readonly></textarea>
+                        
+                        <button onclick="copyTemplateCode()" class="btn btn-secondary shadow-xl">
+                            Copy Template Code
+                        </button>
+                    </div>
+                </div>
+                <div class="builder-flex-container">
+
+                </div>
+            </div>
+
     </div>
     <script src="../../templates/templates.js"></script>
-    <script src="../../templates/custom-templates.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/settings.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/templates-and-forms.js"></script>
     <script src="../js/formatting.js"></script>
     <script src="../js/help.js"></script>
+    <script src="../js/builder.js"></script>
+
     <script>
         window.onload = function() {
             let nextElementMargin = 0;

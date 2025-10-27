@@ -3,6 +3,7 @@ function showPage(pageId) {
         'builder': document.getElementById('builder-page'),
         'templates': document.getElementById('templates-page'),
         'settings': document.getElementById('settings-page'),
+        'templatebuilder': document.getElementById('template-builder-page'),
         'help': document.getElementById('help-page')
     };
 
@@ -14,6 +15,10 @@ function showPage(pageId) {
         if (pageId === 'builder') {
             populateTemplateLibrary();
         }
+
+        if (pageId === 'templatebuilder') {
+        renderBuilderUI();
+    }
     }
 
     document.querySelectorAll('#nav-menu button').forEach(btn => btn.classList.remove('active-nav'));
