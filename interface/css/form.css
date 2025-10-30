@@ -150,3 +150,16 @@ body.dark .editable-textarea-field {
     outline: none;
     box-shadow: 0 0 0 3px rgba(90, 40, 125, 0.2);
 }
+
+.image-file-input {
+    /* Styling for the file upload button/input area */
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* A light gray border */
+    border-radius: 0.375rem; /* Rounded corners */
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}

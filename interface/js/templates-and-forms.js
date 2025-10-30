@@ -19,6 +19,7 @@ function generateForm(templateId) {
     const formHeading = document.createElement('h3');
     formHeading.textContent = template.name;
     formPanel.appendChild(formHeading);
+    
     template.fields.forEach(field => {
         const group = document.createElement('div');
         group.className = 'input-group';
@@ -29,6 +30,7 @@ function generateForm(templateId) {
         group.appendChild(label);
 
         let input;
+        
         if (field.type === 'textarea') {
             input = document.createElement('div');
             input.contentEditable = true;
@@ -37,18 +39,39 @@ function generateForm(templateId) {
             input.addEventListener('input', updatePreview);
             input.addEventListener('focus', () => showToolbar(field.label));
             input.addEventListener('blur', hideToolbar);
+            group.appendChild(input);
+
+        } else if (field.type === 'image') {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            fileInput.className = 'image-file-input'; 
+            fileInput.id = `file-${field.id}`;
+            
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.id = field.id; 
+            hiddenInput.name = field.id; 
+            hiddenInput.value = field.default || '';
+
+            fileInput.addEventListener('change', () => handleImageToBase64(fileInput, field.id));
+            
+            group.appendChild(fileInput);
+            group.appendChild(hiddenInput);
+            
+            input = hiddenInput; 
 
         } else {
             input = document.createElement('input');
             input.type = field.type;
             input.value = field.default || '';
             input.addEventListener('input', updatePreview);
-        }
+            }
+            input.id = field.id;
+            input.name = field.id;
+            group.appendChild(input);
+        
 
-        input.id = field.id;
-        input.name = field.id;
-
-        group.appendChild(input);
         formPanel.appendChild(group);
     });
 }
@@ -264,4 +287,59 @@ function showGuidanceCard() {
                     </button>
                 </div>
     `;
+}
+
+function handleImageToBase64(fileInput, base64InputId, previewElementId) {
+    const file = fileInput.files[0];
+    const base64Input = document.getElementById(base64InputId);
+    const previewElement = document.getElementById(previewElementId);
+
+    if (!file) {
+        base64Input.value = '';
+        if (previewElement) {
+            previewElement.src = '#';
+            previewElement.style.display = 'none';
+        }
+        updatePreview();
+        return;
+    }
+
+    if (!file.type.startsWith('image/')) {
+        // Assuming showNotification is globally defined
+        if (typeof showNotification === 'function') {
+            showNotification('error', 'Please select a valid image file.', 3000);
+        }
+        base64Input.value = '';
+        if (previewElement) {
+            previewElement.src = '#';
+            previewElement.style.display = 'none';
+        }
+        updatePreview();
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+        const base64String = e.target.result;
+        base64Input.value = base64String;
+
+        if (previewElement) {
+            previewElement.src = base64String;
+            previewElement.style.display = 'block';
+        }
+
+        // Trigger updatePreview once the base64 value is set
+        updatePreview();
+    };
+
+    reader.onerror = () => {
+        if (typeof showNotification === 'function') {
+            showNotification('error', 'Failed to read the image file.', 3000);
+        }
+        base64Input.value = '';
+        updatePreview();
+    };
+
+    reader.readAsDataURL(file);
 }

@@ -37,8 +37,16 @@ body.dark #sidebar {
     margin-bottom: 0.5rem;
 }
 
+#sidebar h4{
+    color: var(--clr-surface-a10);
+}
+
 body.dark #sidebar h3 {
     color: var(--clr-primary-a50);
+}
+
+body.dark #sidebar h4 {
+    color: var(--clr-surface-a70);
 }
 
 #nav-menu {
